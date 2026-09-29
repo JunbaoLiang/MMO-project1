@@ -1,0 +1,23 @@
+# Data: only manifests/READMEs are tracked
+data/raw/*
+!data/raw/README.md
+!data/raw/manifest.yaml
+data/processed/*
+!data/processed/.gitkeep
+
+# Run outputs and model weights
+results/*
+!results/.gitkeep
+*.pt
+*.pkl
+*.npy
+*.npz
+*.parquet
+
+# Python / tooling
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.claude/settings.local.json
