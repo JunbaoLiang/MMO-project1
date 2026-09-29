@@ -159,9 +159,9 @@ data/raw/manifest.yaml
 - [x] 独立 Python 3.11 环境（conda `mmo`）
 - [x] RDKit/PyTorch/BoTorch import smoke test 通过（`scripts/smoke_env.py`）
 - [x] 依赖版本已锁定（`environment.lock.yml`）
-- [ ] benchmark_spec 十项已填写
-- [ ] benchmark.yaml 与 spec 数值一致
-- [ ] 流程图显示 optimizer / oracle / evaluator 权限边界
+- [x] benchmark_spec 十项已填写
+- [x] benchmark.yaml 与 spec 数值一致
+- [x] 流程图显示 optimizer / oracle / evaluator 权限边界
 - [x] gdb13.csv 的 source commit、SHA-256、大小、行数、header 已记录
 - [x] 原始数据未被修改（chmod 444）
 

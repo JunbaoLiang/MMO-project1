@@ -1,0 +1,51 @@
+# Machine-readable benchmark rules. Rationale: docs/benchmark_spec.md (v1.0).
+# null = provisional; rule is frozen in the spec, value filled at the stated time.
+spec_version: "1.0"
+
+data:
+  raw_path: data/raw/gdb13.csv
+  raw_sha256: c3d4dec043010ffa069c38acd2059d4685a44d9479f04a9e7a7601b0a0b567b2
+  smiles_column: smiles
+  objectives:            # internal y = sign * column; all maximized
+    - {name: neg_delta_est, column: singlet-triplet value, sign: -1}
+    - {name: f_osc, column: oscillator strength, sign: 1}
+  sa_max: 4.5
+  n_clean: null          # Week 1
+
+split:
+  pool_size: 10000
+  pool_seed: 42
+  dev_size: 20000
+  dev_seed: 7
+  extra_pool_seeds: [43, 44]
+
+features:
+  morgan_radius: 2
+  morgan_nbits: 2048
+
+run:
+  n_init: 100
+  q: 5
+  n_rounds: 80
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  method_seed_offset: 10000
+  methods: [random, greedy_hvi, parego, qlogehvi]
+
+scaling:                 # z = (y - mean) / std, fit on dev only (ddof=0)
+  mean: null             # Week 1
+  std: null              # Week 1
+
+reference_point:         # dev quantile of z, shared by acquisition and evaluation
+  quantile: 0.05
+  value: null            # Week 1
+
+surrogate: null          # Week 3
+
+qlogehvi:
+  mc_samples: null       # Week 6
+  chunk_size: null       # Week 6
+
+metrics:
+  auc_start: 100
+  auc_end: 500
+  primary_comparison: [qlogehvi, greedy_hvi]
