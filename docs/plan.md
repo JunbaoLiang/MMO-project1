@@ -162,8 +162,8 @@ data/raw/manifest.yaml
 - [ ] benchmark_spec 十项已填写
 - [ ] benchmark.yaml 与 spec 数值一致
 - [ ] 流程图显示 optimizer / oracle / evaluator 权限边界
-- [ ] gdb13.csv 的 source commit、SHA-256、大小、行数、header 已记录
-- [ ] 原始数据未被修改
+- [x] gdb13.csv 的 source commit、SHA-256、大小、行数、header 已记录
+- [x] 原始数据未被修改（chmod 444）
 
 Gate 后第一个编码任务：只读的 raw-data inspection 脚本，验证 schema、有限数值、SMILES 解析率和重复情况，输出机器可读质量报告；不修改原文件，不生成正式 split。
 

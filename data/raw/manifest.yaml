@@ -1,0 +1,30 @@
+dataset_name: tartarus_gdb13
+task: organic_emitters
+source_repository: https://github.com/the-matter-lab/Tartarus
+source_commit: 5accbf7217e586095760db45ecb94078e1089584
+source_path: datasets/gdb13.csv
+source_url: https://raw.githubusercontent.com/the-matter-lab/Tartarus/5accbf7217e586095760db45ecb94078e1089584/datasets/gdb13.csv
+git_blob_sha1: 7f42a25be272f839bdf6919cd63cb84b327bec4d  # matches `git hash-object`; file is a regular blob, not LFS
+downloaded_at: 2026-09-29T01:34:23Z
+local_filename: gdb13.csv
+sha256: c3d4dec043010ffa069c38acd2059d4685a44d9479f04a9e7a7601b0a0b567b2
+file_size_bytes: 40803913
+row_count_raw: 398453  # data rows, header excluded; every row has 5 fields
+column_names_raw:
+  - smiles
+  - singlet-triplet value
+  - oscillator strength
+  - multi-objective value
+  - time (s)
+columns:
+  smiles: input SMILES as distributed (not yet canonicalized)
+  singlet-triplet value: "ΔE_ST in eV = min(S) - min(T) excitation energy (tartarus/tadf.py L265-273); minimize"
+  oscillator strength: "f_osc of the lowest singlet, dimensionless (tartarus/tadf.py L266, L274); maximize"
+  multi-objective value: Tartarus's own scalarized score; NOT used by this project
+  time (s): wall time of the property calculation; NOT used
+missing_values: none found (no empty cells, no nan/inf/none/null tokens, all property cells parse as float)
+license_source: no LICENSE file at source_commit; cite Nigam et al., arXiv:2209.12487
+notes:
+  - Tartarus README reports 403,947 SMILES for gdb13.csv; this commit contains 398,453 rows (5,494 fewer). Cause unknown; we use the file as pinned here.
+  - No redistribution license, so the raw file is never committed; obtain it from source_url and verify sha256.
+  - Local copy is read-only (chmod 444). Never clean in place.
