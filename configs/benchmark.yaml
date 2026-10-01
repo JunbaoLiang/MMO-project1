@@ -1,6 +1,6 @@
-# Machine-readable benchmark rules. Rationale: docs/benchmark_spec.md (v1.0).
+# Machine-readable benchmark rules. Rationale: docs/benchmark_spec.md (v1.1).
 # null = provisional; rule is frozen in the spec, value filled at the stated time.
-spec_version: "1.0"
+spec_version: "1.1"
 
 data:
   raw_path: data/raw/gdb13.csv

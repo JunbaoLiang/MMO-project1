@@ -11,5 +11,6 @@ Status: Project Start Gate passed; next is Week 1 data cleaning. Rules: [docs/be
 ```bash
 conda env create -f environment.yml   # or environment.lock.yml for exact versions
 conda activate mmo
+pip install -e . --no-deps
 python scripts/smoke_env.py
 ```

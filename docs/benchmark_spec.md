@@ -1,4 +1,4 @@
-# Benchmark Spec v1.0
+# Benchmark Spec v1.1
 
 Finite-pool bi-objective active search on Tartarus organic emitters.
 Machine-readable values live in [configs/benchmark.yaml](../configs/benchmark.yaml); this file gives the rules and reasons.
@@ -40,7 +40,7 @@ SAscore 只由结构决定，用它过滤不构成标签泄漏。清洗后的集
 1. Benchmark pool P：`default_rng(42).choice(|C|, 10000, replace=False)`；
 2. Development set D：从 C \ P 中 `default_rng(7).choice(·, 20000, replace=False)`。
 
-P 与 D 在 canonical SMILES 上不相交。C \ (P ∪ D) 不使用，仅 Week 9 额外 pool 可以使用。
+P 与 D 在 canonical SMILES 上不相交，均以 `mol_id` 升序存储（下游抽样如 initial set 依赖此顺序）。C \ (P ∪ D) 不使用，仅 Week 9 额外 pool 可以使用。
 
 - D：标签全部可见。只用于特征与模型选择、超参数、scaling、reference point 和 calibration。
 - P：标签只能通过 Oracle 取得。正式 run 的 surrogate 每轮只在本 run 已观测的数据上从头拟合，不带入 D 上训练得到的权重。
@@ -154,3 +154,4 @@ flowchart LR
 | 版本 | 日期 | 变更 |
 |---|---|---|
 | 1.0 | 2026-09-28 | 初版冻结 |
+| 1.1 | 2026-09-30 | 澄清 P、D 以 mol_id 升序存储（§4） |
