@@ -4,6 +4,7 @@ data/raw/*
 !data/raw/manifest.yaml
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/report.json
 
 # Run outputs and model weights
 results/*

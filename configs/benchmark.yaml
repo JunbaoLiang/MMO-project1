@@ -10,7 +10,7 @@ data:
     - {name: neg_delta_est, column: singlet-triplet value, sign: -1}
     - {name: f_osc, column: oscillator strength, sign: 1}
   sa_max: 4.5
-  n_clean: null          # Week 1
+  n_clean: 374690        # Week 1, data/processed/report.json
 
 split:
   pool_size: 10000
@@ -32,12 +32,12 @@ run:
   methods: [random, greedy_hvi, parego, qlogehvi]
 
 scaling:                 # z = (y - mean) / std, fit on dev only (ddof=0)
-  mean: null             # Week 1
-  std: null              # Week 1
+  mean: [-0.9989572296560767, 0.08579271868400559]   # Week 1, report.json
+  std: [0.39539780514005346, 0.1504208244914945]     # Week 1, report.json
 
 reference_point:         # dev quantile of z, shared by acquisition and evaluation
   quantile: 0.05
-  value: null            # Week 1
+  value: [-1.7146694109335199, -0.5702497978086059]  # Week 1, report.json (z units)
 
 surrogate: null          # Week 3
 

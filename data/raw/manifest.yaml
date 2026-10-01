@@ -28,3 +28,5 @@ notes:
   - Tartarus README reports 403,947 SMILES for gdb13.csv; this commit contains 398,453 rows (5,494 fewer). Cause unknown; we use the file as pinned here.
   - No redistribution license, so the raw file is never committed; obtain it from source_url and verify sha256.
   - Local copy is read-only (chmod 444). Never clean in place.
+  - "Week 1 finding: max SAscore in the file is exactly 4.50, so the SA <= 4.5 filter removes nothing (Tartarus appears pre-filtered); kept as a guard."
+  - "Week 1 finding: 11,315 canonical-SMILES groups (23,763 rows) are duplicates, 10,344 of them with identical raw SMILES. No group has identical labels: within-group range of dE_ST has median 0.0002 eV, p90 0.125 eV, max 1.27 eV. Labels therefore carry calculation noise (likely stochastic conformer search). All duplicate groups are dropped (spec §3)."

@@ -154,4 +154,4 @@ flowchart LR
 | 版本 | 日期 | 变更 |
 |---|---|---|
 | 1.0 | 2026-09-28 | 初版冻结 |
-| 1.1 | 2026-09-30 | 澄清 P、D 以 mol_id 升序存储（§4） |
+| 1.1 | 2026-09-30 | 澄清 P、D 以 mol_id 升序存储（§4）；填入 Week 1 provisional 值 n_clean、scaling、reference point（来自 report.json） |
